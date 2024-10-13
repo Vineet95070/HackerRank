@@ -7,30 +7,33 @@ using namespace std;
 
 
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     
-    int n, q;
-    cin >> n >> q;
-
-    vector<std::vector<int>> arr(n);
-
-    for (int i = 0; i < n; i++) {
+    int n1, n2;
+    cin>>n1>>n2;
+    
+    vector< vector <int> > vec;
+    for(int i=0; i<n1; i++){
+        
         int size;
-        cin >> size;
-
-        arr[i].resize(size);
-
-        for (int j = 0; j < size; j++) {
-            cin >> arr[i][j];
+        cin>>size;
+        vector<int> v;
+        for(int j=0; j<size; j++){
+            
+            int val;
+            cin>>val;
+            v.push_back(val);
         }
+        vec.push_back( v );
     }
-
-    for (int k = 0; k < q; k++) {
-        int i, j;
-        cin >> i >> j;
-
-        cout << arr[i][j] << endl;
+    
+    int row, column;
+    for(int i=0; i<n2; i++){
+        
+        cin>>row>>column;
+        cout<<vec[row][column]<<endl;
     }
-      
+        
+    
     return 0;
 }
